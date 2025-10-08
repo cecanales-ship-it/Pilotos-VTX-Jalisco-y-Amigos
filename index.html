@@ -165,12 +165,19 @@
 
     <section id="contacto">
       <h2>Contáctanos</h2>
-      <form>
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="email" placeholder="Tu correo" required>
-        <textarea rows="4" placeholder="Mensaje"></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+      <form action="https://formsubmit.co/cecanales@gmail.com" method="POST">
+  <input type="text" name="name" placeholder="Tu nombre" required>
+  <input type="email" name="email" placeholder="Tu correo" required>
+  <textarea name="message" rows="4" placeholder="Mensaje" required></textarea>
+  
+  <!-- Opcional: redirigir después de enviar -->
+  <input type="hidden" name="_next" value="https://tuusuario.github.io/pilotos-vtx-jalisco/gracias.html">
+  
+  <!-- Opcional: evitar spam -->
+  <input type="hidden" name="_captcha" value="false">
+  
+  <button type="submit">Enviar</button>
+</form>
     </section>
   </main>
 
@@ -181,6 +188,7 @@
 </body>
 
 </html>
+
 
 
 
