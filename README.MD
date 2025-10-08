@@ -1,4 +1,4 @@
-![Portada del sitio](logo pilotos vtx.gif)
+![Portada del sitio](cesar/pilotos vtx/logo pilotos vtx.gif)
 # Pilotos VTX Jalisco y Amigos MG
 
 Bienvenido al repositorio oficial del sitio web de **Pilotos VTX Jalisco y Amigos MG**, un club de motociclistas con sede en Jalisco, México. Este sitio celebra la hermandad, la pasión por las motos y el orgullo jalisciense.
