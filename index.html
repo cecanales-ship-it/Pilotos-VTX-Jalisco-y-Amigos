@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilotos VTX Jalisco y Amigos MG</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1c1c1c;
+      color: #fff;
+    }
+
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    nav {
+      background-color: #111;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #f2f2f2;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    .events ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .events li {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      form {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="tu-logotipo.png" alt="Logotipo Pilotos VTX Jalisco y Amigos MG">
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#galeria">Galería</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main>
+    <section id="inicio">
+      <h1>Bienvenidos a Pilotos VTX Jalisco y Amigos MG</h1>
+      <p>Una hermandad sobre ruedas que celebra la pasión por las motos, la amistad y el orgullo jalisciense.</p>
+    </section>
+
+    <section id="galeria" class="gallery">
+      <h2>Galería de Fotos</h2>
+      <img src="foto1.jpg" alt="Ruta en montaña">
+      <img src="foto2.jpg" alt="Encuentro de pilotos">
+      <img src="foto3.jpg" alt="Motocicletas alineadas">
+    </section>
+
+    <section id="eventos" class="events">
+      <h2>Próximos Eventos</h2>
+      <ul>
+        <li>📅 12 Oct - Rodada a Tequila</li>
+        <li>📅 26 Oct - Noche de Fogata en Tapalpa</li>
+        <li>📅 2 Nov - Ruta Día de Muertos</li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo" required>
+        <textarea rows="4" placeholder="Mensaje"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Pilotos VTX Jalisco y Amigos MG. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
