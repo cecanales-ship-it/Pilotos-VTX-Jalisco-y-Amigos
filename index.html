@@ -145,7 +145,17 @@
       <h1>Bienvenidos a Pilotos VTX Jalisco y Amigos </h1>
       <p>Una hermandad sobre ruedas que celebra la pasión por las motos y la amistad.</p>
     </section>
-
+    
+  <section id="galeria">
+    <h2>Sube tus fotos</h2>
+    <input type="file" id="fileInput" accept="image/*" multiple>
+    <div id="preview" class="gallery"></div>
+    <button id="clearBtn" class="tooltip">
+      🗑️
+      <span class="tooltiptext">Limpiar galería</span>
+    </button>
+  </section>
+</main>
     <section id="galeria" class="gallery">
       <h2>Galería de Fotos</h2>
       <img src="foto1.jpg" alt="Ruta en montaña">
@@ -210,10 +220,40 @@ Con el interés de mantener la unión, el respeto y la buena vibra quedamos de u
     </div>
 
   </footer>
+<script>
+  const fileInput = document.getElementById('fileInput');
+  const preview = document.getElementById('preview');
+  const clearBtn = document.getElementById('clearBtn');
 
+  fileInput.addEventListener('change', () => {
+    preview.innerHTML = "";
+    const files = fileInput.files;
+
+    Array.from(files).forEach(file => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.alt = "Imagen cargada";
+        preview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  clearBtn.addEventListener('click', () => {
+    const confirmacion = confirm("⚠️ ¿Estás seguro de vaciar la galería?");
+    if (confirmacion) {
+      preview.innerHTML = "";
+      fileInput.value = "";
+      alert("✅ La galería ha sido vaciada correctamente.");
+    }
+  });
+</script>
 </body>
 
 </html>
+
 
 
 
