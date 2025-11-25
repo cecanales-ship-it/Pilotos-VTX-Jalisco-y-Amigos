@@ -158,6 +158,12 @@
       <span class="tooltiptext">Limpiar galería</span>
     </button>
   </section>
+  <!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="" alt="Imagen ampliada">
+</div>
+
 </main>
       <img src="" alt="">
       <img src="" alt="">
@@ -251,9 +257,73 @@ Con el interés de mantener la unión, el respeto y la buena vibra quedamos de u
     }
   });
 </script>
+<script>
+  const fileInput = document.getElementById('fileInput');
+  const preview = document.getElementById('preview');
+  const clearBtn = document.getElementById('clearBtn');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.close');
+
+  // ⚠️ Reemplaza con tus datos de Cloudinary
+  const CLOUD_NAME = "tu-cloud-name";
+  const UPLOAD_PRESET = "tu-upload-preset";
+
+  fileInput.addEventListener('change', async () => {
+    preview.innerHTML = "";
+    const files = fileInput.files;
+
+    for (const file of files) {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", UPLOAD_PRESET);
+
+      // Subir a Cloudinary
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await res.json();
+
+      // Miniatura optimizada
+      const img = document.createElement("img");
+      img.src = data.secure_url.replace("/upload/", "/upload/w_200,h_200,c_fill/");
+      img.alt = "Imagen subida";
+
+      // Abrir lightbox
+      img.addEventListener("click", () => {
+        lightbox.style.display = "block";
+        lightboxImg.src = data.secure_url;
+      });
+
+      preview.appendChild(img);
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    const confirmacion = confirm("⚠️ ¿Estás seguro de vaciar la galería?");
+    if (confirmacion) {
+      preview.innerHTML = "";
+      fileInput.value = "";
+      alert("✅ La galería ha sido vaciada correctamente.");
+    }
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+</script>  
 </body>
 
 </html>
+
 
 
 
