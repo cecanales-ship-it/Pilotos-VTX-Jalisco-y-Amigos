@@ -227,36 +227,7 @@ Con el interés de mantener la unión, el respeto y la buena vibra quedamos de u
     </div>
 
   </footer>
-<script>
-  const fileInput = document.getElementById('fileInput');
-  const preview = document.getElementById('preview');
-  const clearBtn = document.getElementById('clearBtn');
 
-  fileInput.addEventListener('change', () => {
-    preview.innerHTML = "";
-    const files = fileInput.files;
-
-    Array.from(files).forEach(file => {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.alt = "Imagen cargada";
-        preview.appendChild(img);
-      };
-      reader.readAsDataURL(file);
-    });
-  });
-
-  clearBtn.addEventListener('click', () => {
-    const confirmacion = confirm("⚠️ ¿Estás seguro de vaciar la galería?");
-    if (confirmacion) {
-      preview.innerHTML = "";
-      fileInput.value = "";
-      alert("✅ La galería ha sido vaciada correctamente.");
-    }
-  });
-</script>
 <script>
   const fileInput = document.getElementById('fileInput');
   const preview = document.getElementById('preview');
@@ -323,6 +294,7 @@ Con el interés de mantener la unión, el respeto y la buena vibra quedamos de u
 </body>
 
 </html>
+
 
 
 
